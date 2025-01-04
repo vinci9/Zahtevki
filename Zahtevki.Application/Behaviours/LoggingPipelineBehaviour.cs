@@ -31,7 +31,7 @@ namespace Zahtevki.Application.Behaviours
             }
             catch (Exception ex)
             {
-                _logger.LogError("Request {RequestName} failed at {DateTimeUtc}", typeof(TRequest).Name, DateTime.UtcNow);
+                _logger.LogError("Request {RequestName} failed at {DateTimeUtc} with error: {ErrorMessage}", typeof(TRequest).Name, DateTime.UtcNow, ex.Message);
                 throw;
             }
         }
